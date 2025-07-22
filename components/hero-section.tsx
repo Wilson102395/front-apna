@@ -17,7 +17,7 @@ export default function HeroSection() {
                 <Button asChild size="lg">
                     <Link href="/categorias/hombres">Hombres</Link>
                 </Button>
-                <Button asChild size="lg">
+                <Button variant="outline" asChild size="lg">
                     <Link href="/categorias/mujeres">Mujeres</Link>
                 </Button>
             </div>
