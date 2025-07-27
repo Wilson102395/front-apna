@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
 import { Category } from "@/lib/types";
 
 interface CategoryCardProps {
@@ -10,10 +11,15 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
-  const [imgSrc, setImgSrc] = useState(category.image || "/images/placeholder.svg");
+  const [imgSrc, setImgSrc] = useState(
+    category.image || "/images/placeholder.svg"
+  );
 
   return (
-    <Link href={`/categorias/${category.slug}`} className="group relative overflow-hidden bg-muted">
+    <Link
+      href={`/categorias/${category.slug}`}
+      className="group relative overflow-hidden bg-muted"
+    >
       <div className="aspect-square overflow-hidden bg-muted">
         <Image
           src={imgSrc}

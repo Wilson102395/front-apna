@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider} from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
-import {ClerkProvider} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/footer";
 
 const geistSans = Geist({
@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "APNA - Tienda de Pijamas Online",
-  description: "Encuentra los mejores pijamas para toda la familia en APNA. Calidad y estilo al mejor precio.",
+  description:
+    "Encuentra los mejores pijamas para toda la familia en APNA. Calidad y estilo al mejor precio.",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-          <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
         <head />
         <body>
           <ThemeProvider
@@ -40,14 +41,13 @@ export default function RootLayout({
             <div className="flex flex-col min-h-screen">
               <Header />
               <main className="flex-1 w-full mx-auto lg:max-w-[1200px] xl:max-w-[1200px]">
-                 {children}
+                {children}
               </main>
               <Footer />
             </div>
-
           </ThemeProvider>
         </body>
       </html>
-      </ClerkProvider>
+    </ClerkProvider>
   );
 }
